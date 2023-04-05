@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useContext } from "react";
+import Navbar from "./components/Navbar/Navbar";
+import PodcastPage from "./routes/PodcastPage";
+import { Route, Routes } from "react-router-dom";
+import DataContext from "./Context/dataContext";
+import { useEffect } from "react";
 
 function App() {
   return (
-    <div className="App">
-      <div>hello world</div>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<PodcastPage />} />
+      </Routes>
+    </>
   );
 }
 

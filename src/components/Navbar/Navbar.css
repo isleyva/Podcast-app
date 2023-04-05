@@ -1,0 +1,36 @@
+.Navbar {	
+    background-color: #fffcfc;
+    color: #ffffff;
+    border-bottom: solid 1px #e4e3e3;
+    font-weight: bold;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 955px;
+    display:flex;
+    justify-content: space-between;
+}
+
+.Navbar_a{
+    color: #029bf3;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+
+.loader {
+    width: 25px;
+    height: 25px;
+    border: 3px solid #979797;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation:spin 1s linear infinite;
+    }
+    @keyframes spin { 
+        100% { 
+            -webkit-transform: rotate(360deg); 
+            transform:rotate(360deg); 
+        } 
+    }
