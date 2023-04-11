@@ -8,7 +8,7 @@ function PodcastItem({ item }) {
       className="PodcastItem_Link"
       to={`/podcast/${item.id.attributes["im:id"]}`}
     >
-      <div className="PodcastItem_container" key={item.id}>
+      <div className="PodcastItem_container" key={item.id + item.index}>
         <img
           className="PodcastItem_img"
           src={item["im:image"][2].label}

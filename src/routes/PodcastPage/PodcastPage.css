@@ -1,0 +1,7 @@
+.PodcastPage_container{
+    display: flex;
+    max-width: 955px;
+    margin: 0 auto;
+    gap: 60px;
+    margin-top: 30px;
+}

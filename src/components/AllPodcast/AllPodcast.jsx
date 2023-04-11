@@ -4,13 +4,8 @@ import "./AllPodcast.css";
 import PodcastItem from "../PodcastItem/PodcastItem";
 
 function AllPodcast() {
-  const { podcastData, podcast, loading } = useContext(DataContext);
+  const { podcast } = useContext(DataContext);
   const [searchText, setSearchText] = useState("");
-  console.log(podcast);
-
-  useEffect(() => {
-    podcastData();
-  }, []);
 
   const handleSearch = (event) => {
     const value = event.target.value;
@@ -31,7 +26,7 @@ function AllPodcast() {
           />
         </form>
       </div>
-      {!loading && (
+      {podcast ? (
         <div className="AllPodcast_podcast_container">
           {podcast
             .filter((value) => {
@@ -45,10 +40,12 @@ function AllPodcast() {
                 return value;
               }
             })
-            .map((item) => {
-              return <PodcastItem key={item.id} item={item} />;
+            .map((item, index) => {
+              return <PodcastItem key={item.id + index} item={item} />;
             })}
         </div>
+      ) : (
+        <></>
       )}
     </div>
   );
