@@ -36,52 +36,15 @@ const DataProvider = ({ children }) => {
       podcastData();
     }
   };
-
   useEffect(() => {
     podcastData();
   }, []);
 
   // The 20 episodes fetch
-  const [podcastEpisodes, setPodcastEpisodes] = useState([]);
-  const { podcastId } = useParams();
-  const url = `https://itunes.apple.com/lookup?id=${podcastId}&media=podcast&entity=podcastEpisode&limit=20`;
-  const EpisodesData = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get(url);
-      console.log(response.data.results);
-      setLoading(false);
-      setPodcastEpisodes(response.data.results);
 
-      localStorage.setItem(
-        "EpisodeData",
-        JSON.stringify(response.data.results)
-      );
-      localStorage.setItem("lastUpdated2", new Date().getTime());
-    } catch (error) {
-      console.log("error");
-      setLoading(false);
-    }
-    const lastUpdated = localStorage.getItem("lastUpdated");
-    const storedData = localStorage.getItem("EpisodeData");
-
-    if (
-      storedData &&
-      lastUpdated &&
-      new Date().getTime() - lastUpdated < 86400000
-    ) {
-      setPodcastEpisodes(JSON.parse(storedData));
-    } else {
-      EpisodesData();
-    }
-  };
-  useEffect(() => {
-    EpisodesData();
-  }, [podcastId]);
   return (
     <DataContext.Provider
       value={{
-        podcastEpisodes,
         podcast,
         loading,
       }}

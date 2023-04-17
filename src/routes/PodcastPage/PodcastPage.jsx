@@ -8,8 +8,6 @@ import PodcastEpisodes from "../../components/PodcastEpisodes/PodcastEpisodes";
 import "./PodcastPage.css";
 
 function PodcastPage() {
-  const [loading, setLoading] = useState(false);
-
   return (
     <div className="PodcastPage_container">
       <PodcastCard />
@@ -20,7 +18,3 @@ function PodcastPage() {
 
 export default PodcastPage;
 
-//to do
-//1. organixar llamadas de forma coherente
-//2. reciclar datos de locale storage
-//3. pagina 3

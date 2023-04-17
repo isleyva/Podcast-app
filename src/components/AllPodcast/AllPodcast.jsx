@@ -4,7 +4,7 @@ import "./AllPodcast.css";
 import PodcastItem from "../PodcastItem/PodcastItem";
 
 function AllPodcast() {
-  const { podcast } = useContext(DataContext);
+  const { podcast, loading } = useContext(DataContext);
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (event) => {
@@ -26,7 +26,9 @@ function AllPodcast() {
           />
         </form>
       </div>
-      {podcast ? (
+      {loading ? (
+        <span className="loader"></span>
+      ) : (
         <div className="AllPodcast_podcast_container">
           {podcast
             .filter((value) => {
@@ -44,8 +46,6 @@ function AllPodcast() {
               return <PodcastItem key={item.id + index} item={item} />;
             })}
         </div>
-      ) : (
-        <></>
       )}
     </div>
   );

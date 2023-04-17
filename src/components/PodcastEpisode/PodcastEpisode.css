@@ -1,0 +1,20 @@
+.PodcastEpisode_title{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    color: rgb(57, 136, 255);
+}
+
+.PodcastEpisode_date{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    min-width: 120px;
+}
+
+.PodcastEpisode_time{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    text-align: center;
+}
+.PodcastEpisode_container{
+    border-collapse: collapse;
+    margin: 20px;
+    border: 1px solid rgb(182, 180, 180);
+    /* border-bottom: 1px solid rgb(182, 180, 180); */
+}
